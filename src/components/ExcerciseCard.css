@@ -1,0 +1,23 @@
+.excersice-card{
+    padding: 0.625rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 2px 2px #d9d8d8;
+    margin-bottom: 0.625rem;
+    width: 30%;
+}
+
+.excersice-card>img{
+    width: 100%;
+}
+
+@media screen and (max-width:688.5px) {
+    .excersice-card{
+        width: 46%;
+    }
+}
+
+@media screen and (max-width:425.5px){
+    .excersice-card{
+        width: 100%;
+    }
+}

@@ -1,0 +1,49 @@
+#container{
+    width: 100%;
+    padding: 2rem;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#search-bar-container{
+    /* display: flex; */
+    gap: 1rem;
+    width: 60%;
+}
+
+#search-bar-container>input{
+    padding: 0.2rem;
+    width: 100%;
+}
+
+
+#excersice-cards-container{
+    width: 100%;
+    display: flex;
+    /* grid-template-columns: repeat(3,1fr); */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn{
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 0.625rem;
+    border: none;
+    background: #0000ff;
+    color: #ffffff;
+}
+
+@media screen and (max-width:688.5px){
+    #container{
+        padding: 2rem 0.625rem;
+    }
+}
