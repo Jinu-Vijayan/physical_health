@@ -2,6 +2,17 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## To run the code
+
+Make a key.json file in the src folder and place your X-RapidAPI-Key in it with the prop name **x-api-key**.
+
+Visit [rapidapi.com](https://rapidapi.com/hub) to get the key
+
+Then run the following in the command prompt
+```
+npm i
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
