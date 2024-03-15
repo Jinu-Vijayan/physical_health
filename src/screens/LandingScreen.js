@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import './LandingScreen.css'
 import ExcersiceCard from '../components/ExerciseCard';
+import data from '../key.json'
 
 function LandingScreen(){
 
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '1f95e20102msh50a758b447d5db8p17ec03jsn6ba9634f9ae2',
+            'X-RapidAPI-Key': data['x-api-key'],
             'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
         }
     };
