@@ -1,6 +1,6 @@
 import './ExcerciseCard.css'
 
-function ExcersiceCard({name, bodyPart, target, gifUrl, elem}){
+function ExcersiceCard({name, bodyPart, target, gifUrl}){
 
     return(
         <div className='excersice-card'>

@@ -23,6 +23,11 @@ function LandingScreen(){
     const [filteredList, setFilteredList] = useState(exerciseList);
     const [listToShow, setListToShow] = useState(filteredList.slice(0,20));
     const [searchInput, setSearchInput] = useState("");
+    const [previousLocalStorateUpdateDate, setPreviousLocalStorageUpdateDate] = useState(()=>{
+        const savedData = localStorage.getItem("lastUpdatedDate");
+        const parsedData = JSON.parse(savedData);
+        return parsedData || 0 ;
+    });
 
     async function getExcersiceData(){
 
@@ -52,9 +57,15 @@ function LandingScreen(){
 
     useEffect(()=>{
 
-        if(exerciseList.length === 0){
+        const date = new Date();
+        const dateOfToday = date.getDate();
+
+
+        if(dateOfToday !== previousLocalStorateUpdateDate){
             console.log("calling")
             getExcersiceData();
+            setPreviousLocalStorageUpdateDate(date);
+            localStorage.setItem("lastUpdatedDate",dateOfToday)
         }
 
     },[])
