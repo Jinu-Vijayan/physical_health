@@ -38,7 +38,7 @@ function LandingScreen(){
             const result = await response.json();
 
             setExerciseList(result);
-            setFilteredList(result.slice(0,20));
+            setFilteredList(result);
 
             localStorage.setItem("exerciseData",JSON.stringify(result));
 
@@ -49,8 +49,10 @@ function LandingScreen(){
 
     function clickHandler(){
 
+
         setListToShow((prevState)=>{
-            return([...prevState, ...filteredList.slice(prevState.length, prevState.length + 20)])
+            const updatedArr = [...prevState, ...filteredList.slice(prevState.length, prevState.length + 20)]
+            return(updatedArr);
         })
 
     }
@@ -62,9 +64,10 @@ function LandingScreen(){
 
 
         if(dateOfToday !== previousLocalStorateUpdateDate || exerciseList.length === 0){
-            console.log("calling")
+            console.log(exerciseList.length === 0)
+            console.log('date',dateOfToday !== previousLocalStorateUpdateDate)
             getExcersiceData();
-            setPreviousLocalStorageUpdateDate(date);
+            setPreviousLocalStorageUpdateDate(dateOfToday);
             localStorage.setItem("lastUpdatedDate",dateOfToday)
         }
 
