@@ -61,7 +61,7 @@ function LandingScreen(){
         const dateOfToday = date.getDate();
 
 
-        if(dateOfToday !== previousLocalStorateUpdateDate){
+        if(dateOfToday !== previousLocalStorateUpdateDate || exerciseList.length === 0){
             console.log("calling")
             getExcersiceData();
             setPreviousLocalStorageUpdateDate(date);
@@ -110,7 +110,7 @@ function LandingScreen(){
                 }
             </div>
             <div>
-                {listToShow.length != filteredList.length ? <button className='btn' onClick={clickHandler} >Load more</button> : ""}
+                <button className='btn' onClick={clickHandler} >Load more</button>
             </div>
         </div>
     )
