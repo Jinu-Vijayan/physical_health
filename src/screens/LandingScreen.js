@@ -52,6 +52,9 @@ function LandingScreen(){
 
         setListToShow((prevState)=>{
             const updatedArr = [...prevState, ...filteredList.slice(prevState.length, prevState.length + 20)]
+            if(updatedArr.length === filteredList.length){
+                alert("No more data to show")
+            }
             return(updatedArr);
         })
 
